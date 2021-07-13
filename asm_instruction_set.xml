@@ -124,23 +124,51 @@
 <instruction command="tya" description="TYA (Transfer Y to A)" />
 
 <instruction command="ahx" description="Illegal opcode" />
+<instruction command="sha" description="Illegal opcode - same as ahx" />
 <instruction command="alr" description="Illegal opcode" />
+<instruction command="asr" description="Illegal opcode - same as alr" />
 <instruction command="anc" description="Illegal opcode" />
 <instruction command="anc2" description="Illegal opcode" />
 <instruction command="arr" description="Illegal opcode" />
 <instruction command="axs" description="Illegal opcode" />
+<instruction command="sbx" description="Illegal opcode - same as axs" />
 <instruction command="dcp" description="Illegal opcode" />
+<instruction command="dcp.z" description="Illegal opcode" />
+<instruction command="dcp.zp" description="Illegal opcode" />
+<instruction command="dcm" description="Illegal opcode - same as dcp" />
 <instruction command="isc" description="Illegal opcode" />
+<instruction command="isc.z" description="Illegal opcode" />
+<instruction command="isc.zp" description="Illegal opcode" />
+<instruction command="ins" description="Illegal opcode - same as isc" />
+<instruction command="isb" description="Illegal opcode - same as isc" />
 <instruction command="las" description="Illegal opcode" />
+<instruction command="lae" description="Illegal opcode - same as las" />
+<instruction command="lds" description="Illegal opcode - same as las" />
 <instruction command="lax" description="Illegal opcode" />
+<instruction command="lax.z" description="Illegal opcode" />
+<instruction command="lax.zp" description="Illegal opcode" />
+<instruction command="lxa" description="Illegal opcode - same as lax" />
 <instruction command="rra" description="Illegal opcode" />
+<instruction command="rra.z" description="Illegal opcode" />
+<instruction command="rra.zp" description="Illegal opcode" />
 <instruction command="sax" description="Illegal opcode" />
+<instruction command="sax.z" description="Illegal opcode" />
+<instruction command="sax.zp" description="Illegal opcode" />
 <instruction command="shx" description="Illegal opcode" />
 <instruction command="shy" description="Illegal opcode" />
 <instruction command="slo" description="Illegal opcode" />
+<instruction command="slo.z" description="Illegal opcode" />
+<instruction command="slo.zp" description="Illegal opcode" />
 <instruction command="sre" description="Illegal opcode" />
+<instruction command="sre.z" description="Illegal opcode" />
+<instruction command="sre.zp" description="Illegal opcode" />
 <instruction command="tas" description="Illegal opcode" />
+<instruction command="shs" description="Illegal opcode - same as tas" />
 <instruction command="xaa" description="Illegal opcode" />
+<instruction command="ane" description="Illegal opcode - same as xaa" />
+<instruction command="rla" description="Illegal opcode" />
+<instruction command="rla.z" description="Illegal opcode" />
+<instruction command="rla.zp" description="Illegal opcode" />
 
 <instruction command="bra" description="DTV opcode" />
 <instruction command="sac" description="DTV opcode" />
@@ -185,6 +213,16 @@
 <segment field=".label" description="" />
 <segment field=".enum" description="" />
 <segment field=".var" description="assembler directive " />
+<segment field=".segment" description="switches segment" />
+<segment field=".segmentdef" description="defines a segment" />
+<segment field=".segmentout" description="places bytes of a segment in the current memory block" />
+<segment field=".disk" description="defines a disk" />
+<segment field=".file" description="defines a file" />
+<segment field=".break" description="inserts a breakpoint" />
+<segment field=".watch" description="inserts a watchpoint" />
+
+<function field=".while" description="while directive" />
+<function field=".encoding" description="directive for changing between encodings for the .text directive" />
   
 <class field="List" description="" />
 <class field="Hashtable" description="" />
@@ -204,13 +242,13 @@
 <function field="createFile" description="" />
 
 <function field=".fill" description="assembler directive that defines bytes" />
+<function field=".fillword" description="assembler directive that defines words" />
+<function field=".lohifill" description="works like .fill, but fill two tables, one with lobyte and one with the hibyte if the expression. The adresses of the if the lo and hi table can be read of an connected label." />
 <function field=".for" description="assembler directive that defines the memory model to use in the program." />
 <function field=".print" description="assembler directive that defines the memory model to use in the program." />
 <function field=".printnow" description="assembler directive that defines the memory model to use in the program." />
 <function field=".if" description="" />
 <function field="else" description="" />
-
-
 
 <method field=".size" description="" />
 <method field=".remove" description="" />
@@ -225,6 +263,7 @@
 <method field=".writeln" description="" />
 <method field=".width" description="" />
 <method field=".height" description="" />
+<method field=".getNamespace"  description="" />
 
 <constant field="BF_C64FILE" description="" />
 <constant field="BF_BITMAP_SINGLECOLOR" description="" />
